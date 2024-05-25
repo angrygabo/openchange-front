@@ -1,123 +1,197 @@
-$color_1: #888;
-$color_2: rgba(255, 255, 255, 0.87);
-$color_3: #646cff;
-$color_4: #535bf2;
-$color_5: #213547;
-$color_6: #747bff;
-$font-family_1: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-$font-family_2: inherit;
-$background-color_1: #242424;
-$background-color_2: #1a1a1a;
-$background-color_3: #ffffff;
-$background-color_4: #f9f9f9;
-$border-color_1: #646cff;
+@import 'assets/scss/gocss';
+@import 'assets/scss/dashboard';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@300;900&family=Open+Sans:wght@400;600;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@300;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Montserrat:wght@300;900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@keyframes logo-spin {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-#root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
-}
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-	transition: filter 300ms;
-	&:hover {
-		filter: drop-shadow(0 0 2em #646cffaa);
-	}
-}
-.logo.react {
-	&:hover {
-		filter: drop-shadow(0 0 2em #61dafbaa);
-	}
-}
-.card {
-	padding: 2em;
-}
-.read-the-docs {
-	color: $color_1;
-}
-#root {
-	font-family: $font-family_1;
-	line-height: 1.5;
-	font-weight: 400;
-	color-scheme: light dark;
-	color: $color_2;
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
-}
-a {
-	font-weight: 500;
-	color: $color_3;
-	text-decoration: inherit;
-	&:hover {
-		color: $color_4;
-	}
-}
 body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
-    background-color: $background-color_1;
+	//@include gradient-bg;
+	background-color: #f3f3f3;
+    font-family: "Roboto", sans-serif;
 }
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
+
+// header
+.main-header--ghost {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    background: #ebebeb;
+    transition: .4s;
+    &.show-header {
+        transform: translateY(0);
+    }
+    &.hidden-header {
+        transform: translateY(-100%);
+    }
 }
+
 button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: $font-family_2;
-	background-color: $background-color_2;
+    @extend %select-none;
+    background-color: #f3f3f3;
+    align-self: center;
+    border: 0;
+    color: #000000;
+    font-weight: 600;
+    box-shadow: 0 0px 10px rgba(0,0,0,0);
+    margin: 0;
+    transform: translate(0) scale(1) rotate(0);
+    border-radius: 5px;
+    overflow: hidden;
+	padding: 10px 20px;
 	cursor: pointer;
-	transition: border-color 0.25s;
-	&:hover {
-		border-color: $border-color_1;
-	}
-	&:focus {
-		outline: 4px auto -webkit-focus-ring-color;
-	}
-	&:focus-visible {
-		outline: 4px auto -webkit-focus-ring-color;
-	}
+    &:hover {
+        color: #000000;
+        border: 0;
+        opacity: 0.6;
+    }
+    i {
+        font-size: 1.2rem;
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+    }
 }
-@media (prefers-reduced-motion: no-preference) {
-	a {
-		&:nth-of-type(2) {
-			.logo {
-				animation: logo-spin infinite 20s linear;
+
+.btn-gradient {
+    @extend %select-none;
+    align-self: center;
+    border: 0;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0px 10px rgba(0,0,0,0);
+    margin: 0;
+    transform: translate(0) scale(1) rotate(0);
+    border-radius: 50px;
+    overflow: hidden;
+    @include gradient-bg;
+    &:hover {
+        color: #fff;
+        @include gradient-bg;
+        border: 0;
+        opacity: 0.8;
+    }
+    i {
+        font-size: 1.2rem;
+        position: relative;
+        top: 2px;
+        margin-right: 5px;
+    }
+    font-size: 1rem !important;
+}
+
+.error {
+    color: red;
+    font-size: .87rem;
+}
+
+
+//login
+.wraperLogin {
+    display: flex;
+    flex-wrap: wrap;
+	width: 100%;
+    height: 100vh;
+	justify-content: center;
+	align-items: center;
+    &_box {
+        display: flex;
+        flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+        width: 100%;
+        max-width: 400px;
+		height: fit-content;
+        padding: 50px 40px;
+        box-sizing: border-box;
+        overflow-y: auto;
+		border-radius: 10px;
+		background: #ffffff;
+		box-shadow:  20px 20px 60px #d9d9d9,
+					 -20px -20px 60px #ffffff;
+		&--loginform {
+			width: 100%;
+			height: auto;
+		}
+		@media (max-width:980px) {
+			font-size: 1.2rem;
+			line-height: 1.3;
+			padding: 40px 20px;
+		}
+		&--title {
+			font-size: 1.5rem;
+            font-weight: normal;
+		}
+        .logo {
+            max-width: 200px;
+        }
+        .registroInfo {
+            width: 100%;
+			color: #000000;
+			font-size: 1rem;
+            a {
+                text-decoration: none;
+            }
+        }
+        .recuperarPassLink {
+            width: 100%;
+        }
+        .privacidadInfo {
+            font-size: 13px;
+            a {
+                text-decoration: underline;
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+        form {
+            label {
+                color: #000000;
+                font-size: 1rem;
+                font-weight: 400;
+                margin: 0 0 2px;
+                position: relative;
+                @include media-breakpoint-down(md) { 
+                font-size: 1.2rem;
+                line-height: 1.3;
+                }
+				svg {
+					position: relative;
+					color: #666666;
+					top: -2px;
+					width: 1.1rem;
+					height: 1.1rem;
+				}
+            }
+			input[type=text],
+			input[type=password] {
+				background: transparent;
 			}
-		}
-	}
-}
-@media (prefers-color-scheme: light) {
-	#root {
-		color: $color_5;
-		background-color: $background-color_3;
-	}
-	a {
-		&:hover {
-			color: $color_6;
-		}
-	}
-	button {
-		background-color: $background-color_4;
-	}
+        }
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border-radius: 3px;
+        border: 1px solid #cccccc;
+		background: transparent;
+		color: #000000;
+    }
+    .show-password {
+        cursor: pointer;
+        position: absolute;
+        right: 10px;
+        bottom: 21px;
+        color: #0073e6;
+        text-decoration: none;
+    }
+    .show-password:hover {
+        color: #005a9e;
+    }
 }

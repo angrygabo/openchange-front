@@ -1,0 +1,50 @@
+.headerDev {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 4px;
+    z-index: 1;
+    &_logo {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        max-width: 130px;
+        height: auto;
+        margin: 0;
+        img {
+            width: 100%;
+            height: auto;
+            vertical-align: top;
+        }
+    }
+    &_menu {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        min-height: 70px;
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            -webkit-box-align: center;
+            align-items: center;
+            list-style-type: none; 
+            margin-left: 8px;
+            li {
+                a {
+                    position: relative;
+                    color: #888888;
+                    font-size: 14px;
+                    text-decoration: none;
+                    padding-left: 24px;
+                    padding-top: 22px;
+                    padding-bottom: 22px;
+                    &:hover {
+                        color: #000000 !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,541 @@
+.clearfix {
+    @include clearfix;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: 0 auto;
+}
+
+.m-auto {
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container-fluid-x2 {
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    @include media-breakpoint(sm) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+.container-fluid-x3 {
+    width: 100%;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-right: auto;
+    margin-left: auto;
+    @include media-breakpoint(sm) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+@each $size in $screen {
+    @include media-breakpoint-between($size) {
+        @include container($size);
+    }
+}
+
+.full-width-viewport,
+.full-width {
+    position: relative;
+    width: 100vw!important;
+    max-width: 100vw!important;
+    left: 50%;
+    margin-right: 0!important;
+    margin-left: -50vw!important;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-vw {
+    width: 100vw;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-vh {
+    height: 100vh;
+}
+
+.d-flex {
+    @include d-flex;
+}
+
+.d-inline-flex  {
+    @include d-inline-flex;
+}
+
+@each $size in $screen {
+    @include media-breakpoint-down($size) {
+        .d-#{$size}-flex {
+            @include d-flex;
+        }
+
+        .d-#{$size}-inline-flex {
+            @include d-inline-flex;
+        }
+    }
+}
+
+.flex-wrap{
+    @include flex-wrap;
+}
+
+.flex-nowrap{
+    @include flex-nowrap;
+}
+
+@each $size in $screen {
+    @include media-breakpoint($size) {
+        .flex-#{$size}-wrap{
+            @include flex-wrap;
+        }
+
+        .flex-#{$size}-nowrap{
+            @include flex-nowrap;
+        }
+    }
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-column-reverse {
+   flex-direction: column-reverse;
+}
+
+@each $size in $screen {
+    @include media-breakpoint-down($size) {
+        .flex-#{$size}-row {
+            flex-direction: row;
+        }
+
+        .flex-#{$size}-row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .flex-#{$size}-column {
+            flex-direction: column;
+        }
+
+        .flex-#{$size}-column-reverse {
+           flex-direction: column-reverse;
+        }
+    }
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.align-items-start{
+    align-items: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-self-start{
+    align-self: flex-start;
+    &.row {
+        left: 0;
+    }
+}
+
+.align-self-center {
+    align-self: center;
+    &.row {
+        left: 0;
+    }
+}
+
+.align-self-end {
+    align-self: flex-end;
+    &.row {
+        left: 0;
+    }
+}
+
+@each $size in $screen {
+    @include media-breakpoint-down($size) {
+        .justify-content-#{$size}-start {
+            justify-content: flex-start;
+        }
+
+        .justify-content-#{$size}-end {
+            justify-content: flex-end;
+        }
+
+        .justify-content-#{$size}-center {
+            justify-content: center;
+        }
+
+        .justify-content-#{$size}-between {
+            justify-content: space-between;
+        }
+        
+        .justify-content-#{$size}-around {
+            justify-content: space-around;
+        }
+
+    
+        .align-items-#{$size}-start{
+            align-items: flex-start;
+        }
+
+        .align-items-#{$size}-center {
+            align-items: center;
+        }
+
+        .align-items-#{$size}-end {
+            align-items: flex-end;
+        }
+
+    
+        .align-self-#{$size}-start {
+            align-self: flex-start;
+        }
+
+        .align-self-#{$size}-center {
+            align-self: center;
+        }
+
+        .align-self-#{$size}-end {
+            align-self: flex-end;
+        }
+    }
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    > .col,
+    > [class*="col-"] {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@for $col from 1 through $cols {
+    .order-#{$col} {
+        order: $col;
+    }
+}
+
+@each $size in $screen {
+    @for $col from 0 through $cols {
+        @include media-breakpoint-down($size) {
+            .order-#{$size}-#{$col}{
+                order: $col;
+            }
+        }
+    }
+}
+
+@for $offset from 0 through $cols {
+    .offset-#{$offset} {
+        @include offset($offset);
+    }
+}
+
+@each $size in $screen {
+    @for $offset from 0 through $cols {
+        @include media-breakpoint-down($size) {
+            .offset-#{$size}-#{$offset}{
+                @include offset($offset);
+            }
+        }
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-none {
+    float: none;
+}
+
+@each $size in $screen {
+    @include media-breakpoint($size) {
+        .float-#{$size}-left {
+            float: left;
+        }
+        .float-#{$size}-right {
+            float: right;
+        }
+        .float-#{$size}-none {
+            float: none;
+        }
+    }
+}
+
+.text-capitalize {
+    text-transform: capitalize !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}
+
+.text-lowercase {
+    text-transform: lowercase !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+@each $size in $screen {
+    @include media-breakpoint($size) {
+        .text-#{$size}-center {
+            text-align: center;
+        }
+        .text-#{$size}-left {
+            text-align: left;
+        }
+        .text-#{$size}-right {
+            text-align: right;
+        }
+        .text-#{$size}-justify {
+            text-align: justify;
+        }
+    }
+}
+
+.position-static {
+    position: static;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.position-absolute {
+    position: absolute;
+}
+
+.position-fixed {
+    position: fixed;
+}
+
+.position-sticky {
+    position: sticky;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}
+
+@each $size in $screen {
+    @include media-breakpoint($size) {
+        .overflow-#{$size}-auto {
+            overflow: auto;
+        }
+        .overflow-x-#{$size}-auto {
+            overflow-x: auto;
+        }
+        .overflow-y-#{$size}-auto {
+            overflow-y: auto;
+        }
+        .overflow-#{$size}-hidden {
+            overflow: hidden;
+        }
+        .overflow-x-#{$size}-hidden {
+            overflow-x: hidden;
+        }
+        .overflow-y-#{$size}-hidden {
+            overflow-y: hidden;
+        }
+    }
+}
+
+.bg-primary {
+    background-color: $primary-color;
+}
+.bg-secondary {
+    background-color: $secondary-color;
+}
+.bg-success {
+    background-color: $success-color;
+}
+.bg-warning {
+    background-color: $warning-color;
+}
+.bg-danger {
+    background-color: $danger-color;
+}
+.bg-white {
+    background-color: $white;
+}
+.bg-black {
+    background-color: $black;
+}
+.bg-light-gray {
+    background-color: $light-color;
+}
+.bg-dark-gray {
+    background-color: $dark-gray;
+}
+
+@media (min-width: #{$xl}) { 
+    .hidden-xl-down {
+       @include hidden;
+    }
+}
+
+@media (max-width: #{$xl}) { 
+    .hidden-xl-down {
+        @include hidden;
+    }
+}
+
+@media (max-width: #{$lg}) { 
+    .hidden-lg-down {
+        @include hidden;
+    }
+}
+
+@media (max-width: #{$md}) { 
+    .hidden-md-down {
+        @include hidden;
+    }
+}
+
+@media (max-width: #{$sm}) { 
+    .hidden-sm-down {
+        @include hidden;
+    }
+}
+
+@media (max-width: #{$xs}) { 
+    .hidden-xs-down {
+        @include hidden;
+    }
+}
+
+@media (min-width: #{$xl}) { 
+    .hidden-xl-up {
+       @include hidden;
+    }
+}
+
+@media (min-width: #{$xl}) { 
+    .hidden-xl-up {
+        @include hidden;
+    }
+}
+
+@media (min-width: #{$lg}) { 
+    .hidden-lg-up {
+        @include hidden;
+    }
+}
+
+@media (min-width: #{$md}) { 
+    .hidden-md-up {
+        @include hidden;
+    }
+}
+
+@media (min-width: #{$sm}) { 
+    .hidden-sm-up {
+        @include hidden;
+    }
+}
+
+@media (min-width: #{$xs}) { 
+    .hidden-xs-up {
+        @include hidden;
+    }
+}
+
+@media (max-width: #{$xs}) { 
+    .hidden-xs-up {
+        @include hidden;
+    }
+}

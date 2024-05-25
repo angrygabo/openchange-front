@@ -1,0 +1,18 @@
+// boogo scss
+@import 'global';
+@import 'mixin';
+@import 'presets';
+@import 'containers';
+@import 'spacing';
+@import 'borders';
+@import 'grid';
+@import 'layouts';
+@import 'buttons';
+@import 'tables';
+@import 'forms';
+@import 'animated';
+
+// componets
+@import 'components/menu.scss';
+@import 'components/scrolling.scss';
+@import 'components/accordion.scss';

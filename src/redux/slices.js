@@ -1,110 +1,56 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const origenSlice = createSlice ({
-    name: 'unValor',
+export const authSlice = createSlice({
+    name: 'auth',
     initialState: {
-        miNombre: 'Gabriel',
-        signo: 'Acuario',
-        bibliotecas: [
-            {
-                nombre:'react',
-                comienzo: '2013'
-            },
-            {
-                nombre:'angular',
-                comienzo: '2010'
-            }
-        ]
+        isAuthenticated: false,
+        user: null,
+        role: null,
+        sub: null,    
+        userId: null,
+        processorId: null,
+        iat: null,
+        exp: null,
+        userInfo: []
     },
     reducers: {
-        guardarNombre: (state, action) => {
-            state.miNombre = action.payload;
+        loginSuccess: (state, action) => {
+            state.isAuthenticated = true;
+            state.user = action.payload.user;
+            state.role = action.payload.role;
+            state.sub = action.payload.sub;    
+            state.userId = action.payload.userId;
+            state.processorId = action.payload.processorId;
+            state.iat = action.payload.iat;
+            state.exp = action.payload.exp;
+            state.userInfo = action.payload.userInfo;
         },
-        modificarUnValor: (state, action) => {
-            const {indice, nuevoNombre, nuevoComienzo} = action.payload;
-            state.bibliotecas[indice].nombre = nuevoNombre;
-            state.bibliotecas[indice].comienzo = nuevoComienzo;
-        }
-    }
-})
-
-export const otroSlice = createSlice ({
-    name: 'otroValor',
-    initialState: {
-        miEdad: '39'
-    },
-    reducers: {
-        guardarEdad: (state, action) => {
-            state.miEdad = action.payload;
-        }
-    }
-})
-
-export const trabajadoresSlice = createSlice ({
-    name: 'misTrabajadores',
-    initialState: {
-        trabajadores: []
-    },
-    reducers: {
-        guardarTrabajador: (state, action) => {
-            state.trabajadores=[...state.trabajadores, action.payload]
+        logout: (state) => {
+            state.isAuthenticated = false;
+            state.user = null;
+            state.role = null;
+            state.sub = null;
+            state.userId = null;
+            state.processorId = null;
+            state.iat = null;
+            state.exp = null;
+            state.userInfo = [];
         },
-        modificarStatus: (state, action) => {
-            const {indice, nuevoStatus} = action.payload;
-            state.trabajadores[indice].estado = nuevoStatus;
-        }
-    }
-})
-
-export const departamentosSlice = createSlice ({
-    name: 'misDepartamentos',
-    initialState: {
-        statusRequest: ["Abierto","Procesando","Disputa","Finalizado"]
     },
+});
+
+export const languageSlice = createSlice({
+    name: 'language',
+    initialState: { value: 'es' },
     reducers: {
+      setLanguage: (state, action) => {
+        state.value = action.payload;
+      },
+    },
+});
 
-    }
-})
+export const { setLanguage } = languageSlice.actions;
+export const selectLanguage = (state) => state.language.value;
 
-
-// Async action to send data to an external API
-export const enviarDatosAlAPI = (indice, nuevoStatus) => async (dispatch, getState) => {
-    // Assuming you have an API endpoint to send the data
-    const apiEndpoint = 'https://example.com/api/updateStatus';
-
-    try {
-        // Get the updated state
-        const state = getState();
-        const updatedTrabajador = state.trabajadores.trabajadores[indice];
-
-        // Create the payload to send to the API
-        const payload = {
-            indice,
-            nuevoStatus,
-            updatedTrabajador,
-        };
-
-        // Make the API call
-        const response = await axios.post(apiEndpoint, payload);
-
-        // Dispatch the action to modify the status in the Redux state
-        dispatch(modificarStatus({ indice, nuevoStatus }));
-        
-        // You can handle the API response here if needed
-        console.log(response.data);
-    } catch (error) {
-        // Handle error if the API call fails
-        console.error('Error sending data to the API:', error);
-    }
-};
-
-
-
-export const  {guardarNombre} = origenSlice.actions;
-export const  {modificarUnValor} = origenSlice.actions;
-export const  {guardarEdad} = otroSlice.actions;
-
-export const  {guardarTrabajador} = trabajadoresSlice.actions;
-export const  {guardarDepartamento} = departamentosSlice.actions;
-
-export const  {modificarStatus} = trabajadoresSlice.actions;
+export const { loginSuccess, logout } = authSlice.actions;
+export const selectAuth = (state) => state.auth;

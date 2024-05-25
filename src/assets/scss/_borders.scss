@@ -1,0 +1,53 @@
+.rounded-circle {
+  border-radius: 50px;
+}
+.rounded-left {
+  border-top-left-radius: 1rem*.25;
+  border-bottom-left-radius: 1rem*.25;
+}
+.rounded-right {
+  border-top-right-radius: 1rem*.25;
+  border-bottom-right-radius: 1rem*.25;
+}
+.rounded-top {
+  border-top-left-radius: 1rem*.25;
+  border-top-right-radius: 1rem*.25;
+}
+.rounded-bottom {
+  border-bottom-right-radius: 1rem*.25;
+  border-bottom-left-radius: 1rem*.25;
+}
+//
+.border {
+  border: 1px solid  $light-color;
+}
+.border-top {
+  border-top: 1px solid  $light-color;
+}
+.border-right {
+  border-right: 1px solid  $light-color;
+}
+.border-bottom {
+  border-bottom: 1px solid  $light-color;
+}
+.border-left {
+  border-left: 1px solid  $light-color;
+}
+.border-0 {
+  border: none ;
+}
+.border-primary {
+  border-color: $primary-color;
+}
+.border-secondary {
+  border-color: $secondary-color;
+}
+.border-success {
+  border-color: $success-color;
+}
+.border-warning {
+  border-color: $warning-color;
+}
+.border-danger {
+  border-color: $danger-color;
+}
