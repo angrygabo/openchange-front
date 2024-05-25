@@ -112,6 +112,20 @@
                     top: 10px;
                 }
             }
+            li.alert {
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-2.5px);
+                    left: 8px;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 100%;
+                    background-color: red;
+                }
+            }
             li:hover {
                 background-color: #625BFF;
                 color: #ffffff;

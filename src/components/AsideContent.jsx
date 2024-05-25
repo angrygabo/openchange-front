@@ -80,7 +80,7 @@ const AsideContent = () => {
                 <ul>
                 {role === 'Operator' ? (
                     <>
-                        <li>
+                        <li className="alert">
                             <Person2Icon fontSize="small" />
                             <Link to="/dashboard/mi-perfil" className={isActive('/') ? 'active' : ''}>{t('profile')}</Link>
                         </li>

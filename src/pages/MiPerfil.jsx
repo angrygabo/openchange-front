@@ -18,7 +18,7 @@ const Dashboard = () => {
   return (
     <AuthCheck>
       <div className="bodyContent reveal">
-        <h2 className="bodyContent_heading reveal">{t('profile')}</h2>
+        <h2 className="bodyContent_heading">{t('profile')}</h2>
         <div className="row reveal">
           <form onSubmit={handleSubmit}>
             <FormControl fullWidth>

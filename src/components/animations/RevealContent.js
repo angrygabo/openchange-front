@@ -4,7 +4,7 @@ function RevealBoxes() {
      useEffect(() => {
 
         const revealBoxes = document.querySelectorAll('.reveal');
-
+ 
         if (revealBoxes.length > 0 ) {
             const callback = (el) => {
                 el.forEach(entry => {

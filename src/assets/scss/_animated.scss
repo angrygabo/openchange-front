@@ -2,25 +2,15 @@
 .reveal {
 	position: relative;
 	opacity: 0;
-	transform: translateY(50px) rotate(2deg);
+	//transform: translateY(50px) rotate(2deg);
+	transform: translateY(50px);
 	transition: all 1.2s cubic-bezier(.37,.01,0,.98);
 	&.in {
 	  opacity: 1;
 	  transform: translate(0) scale(1) rotate(0);
 	}
-  }
-
-// item viewport animation viewportTrigger() in boogo.js document file 
-.viewport--trigger {
-	position: relative;
-    opacity: 0!important;
-    transform: translateY(50px) rotate(2deg)!important;
-    transition: all 1.2s cubic-bezier(.37,.01,0,.98)!important;
-    &.in-viewport {
-        opacity: 1!important;
-        transform: translate(0) scale(1) rotate(0)!important;
-    }
 }
+
 
 // floatBox
 .floatBox {

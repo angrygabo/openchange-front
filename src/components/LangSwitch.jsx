@@ -27,7 +27,7 @@ const LanguageSwitcher = () => {
           labelId="language-select-label"
           value={currentLanguage}
           onChange={changeLanguage}
-          label={t('Idioma')}
+          label={t('languaje')}
           MenuProps={{ disableScrollLock: true }}
           sx={{ minWidth: 150 }} 
         >
