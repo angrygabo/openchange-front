@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import AuthCheck from '../hooks/AuthCheck';
 import { TextField, Button, FormControl } from '@mui/material';
+import RevealBoxes from '../components/animations/RevealContent';
 
 
 const Dashboard = () => {
@@ -8,15 +9,17 @@ const Dashboard = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Aquí manejas la lógica de envío del formulario, como enviar datos a un servidor
+    // Aquí lógica de envío del formulario
     console.log("Form submitted");
   };
 
+  RevealBoxes();
+  
   return (
     <AuthCheck>
-      <div className="bodyContent">
-        <h2 className="bodyContent_heading">{t('profile')}</h2>
-        <div className="row">
+      <div className="bodyContent reveal">
+        <h2 className="bodyContent_heading reveal">{t('profile')}</h2>
+        <div className="row reveal">
           <form onSubmit={handleSubmit}>
             <FormControl fullWidth>
               <div className="child-col-6 child-spacing-2">
@@ -67,8 +70,9 @@ const Dashboard = () => {
               <div className="child-col-12 child-spacing-2">
                 <Button
                   type="submit"
-                  variant="contained"
-                  sx={{ mt: 3, mb: 2 }}
+                  //variant="contained"
+                  //sx={{ mt: 3, mb: 2 }}
+                  className="btn btn-gradient"
                 >
                   {t('submit')}
                 </Button>

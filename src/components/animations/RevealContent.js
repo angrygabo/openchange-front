@@ -1,28 +1,40 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 function RevealBoxes() {
+     useEffect(() => {
 
-    const [hasRunReveal, setHasRunReveal] = useState(false);
-
-    useEffect(() => {
         const revealBoxes = document.querySelectorAll('.reveal');
-        if (!hasRunReveal && revealBoxes.length > 0 ) {
+
+        if (revealBoxes.length > 0 ) {
             const callback = (el) => {
                 el.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('in');
+                    setTimeout(() => {
+                        if (entry.target.classList.contains('in')) {
+                            entry.target.classList.remove('reveal');
+                        }
+                    }, 1000);
                 }
                 });
             };
-            const observer = new IntersectionObserver(callback);
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver(callback, observerOptions);
+            
             revealBoxes.forEach((el, i) => {
                 observer.observe(el);
                 el.style.transitionDelay = '.' + i + 's';
             });
-            setHasRunReveal(true);
-
+           
         }
-    }, [hasRunReveal]);
-}
+    }, []);
+    return null;
+}   
 
 export default RevealBoxes;
