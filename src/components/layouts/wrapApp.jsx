@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import Aside from "./Aside";
 import Header from "./Header";
 import AsideContent from '../AsideContent';
+import useLanguageInitialization from '../../hooks/useLanguageInitialization';
 
 const WrapApp = ({ children }) => {
+    useLanguageInitialization();
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
     return (

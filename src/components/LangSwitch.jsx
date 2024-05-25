@@ -8,10 +8,15 @@ const LanguageSwitcher = () => {
   const currentLanguage = useSelector(selectLanguage);
   const { i18n, t } = useTranslation();
 
+
   const changeLanguage = (event) => {
+    /*
+      La carga de idioma en caso que ya se haya establecido uno, lo hará desde el /hooks/useLanguageInitialization.js, almacenado en localstorage
+    */
     const language = event.target.value;
     dispatch(setLanguage(language));
     i18n.changeLanguage(language);
+    localStorage.setItem('language', language);
   };
 
   return (
@@ -24,6 +29,7 @@ const LanguageSwitcher = () => {
           onChange={changeLanguage}
           label={t('Idioma')}
           MenuProps={{ disableScrollLock: true }}
+          sx={{ minWidth: 150 }} 
         >
           <MenuItem value="en">Eng</MenuItem>
           <MenuItem value="es">Esp</MenuItem>
