@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import AuthCheck from '../hooks/AuthCheck';
 import RevealBoxes from '../components/animations/RevealContent';
 
-const Dashboard = () => {
+const Operation = () => {
 
   const { t } = useTranslation();
   RevealBoxes();
@@ -16,4 +16,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Operation;

@@ -20,9 +20,12 @@ const ptTranslations = {
     //forms
     firstName: 'Nome',
     lastName: 'Sobrenome',
-    email: 'Correio eletrônico',
+    email: 'E-mail associado à conta:',
     phoneNumber: 'Número de telefone',
-    submit: 'Enviar'
+    submit: 'Enviar',
+
+    //perfil
+    infoPerfil: 'Tu nombre de usuario es tu e-mail. Cambiar tu correo electrónico en Detalles del perfil del propietario también cambiará tu nombre de usuario.',
 };
   
 export default ptTranslations;

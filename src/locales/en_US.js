@@ -4,7 +4,7 @@ const enTranslations = {
     password: 'Password',
     role: 'Role',
     login: 'login',
-    languaje: 'languaje',
+    languaje: 'Languaje seleted:',
 
     //Navbar
     dashboard: 'Dashboard',
@@ -20,9 +20,12 @@ const enTranslations = {
     //forms
     firstName: 'First name',
     lastName: 'Last name',
-    email: 'E-mail',
+    email: 'Email associated with the account:',
     phoneNumber: 'Phone number',
-    submit: 'Send'
+    submit: 'Send',
+
+    //perfil
+    infoPerfil: 'Tu nombre de usuario es tu e-mail. Cambiar tu correo electrónico en Detalles del perfil del propietario también cambiará tu nombre de usuario.',
 };
   
 export default enTranslations;

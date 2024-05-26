@@ -1,20 +1,27 @@
-
 import { useTranslation } from 'react-i18next';
 import AuthCheck from '../hooks/AuthCheck';
 import RevealBoxes from '../components/animations/RevealContent';
 
-const Dashboard = () => {
 
+const MyOperations = () => {
   const { t } = useTranslation();
-  RevealBoxes();
 
+  RevealBoxes();
+  
   return (
     <AuthCheck>
+      <h2 className="wrapDashboard_header--heading mt-3">{t('newOperation')}</h2>
       <div className="bodyContent reveal">
-        <h2 className="bodyContent_heading">{t('operations')}</h2>
+        <div className="row">
+          <div className="col bodyContent_left px-4 py-5">
+            <div className="col-12 child-col-6 px-2">
+
+            </div>
+          </div>
+        </div>
       </div>
     </AuthCheck>
   );
 };
 
-export default Dashboard;
+export default MyOperations;

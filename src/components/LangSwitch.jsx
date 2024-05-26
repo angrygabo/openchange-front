@@ -29,16 +29,14 @@ const LanguageSwitcher = () => {
           onChange={changeLanguage}
           label={t('languaje')}
           MenuProps={{ disableScrollLock: true }}
-          sx={{ minWidth: 150 }} 
+          sx={{ minWidth: 250 }}
+          
         >
           <MenuItem value="en">Eng</MenuItem>
           <MenuItem value="es">Esp</MenuItem>
           <MenuItem value="pt">Port</MenuItem>
         </Select>
       </FormControl>
-      <p>
-        {t('languaje')}: <span className="text-uppercase"><b>{currentLanguage}</b></span>
-      </p>
     </div>
   );
 };

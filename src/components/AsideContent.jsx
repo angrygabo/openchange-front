@@ -30,45 +30,45 @@ const AsideContent = () => {
                 {role === 'Operator' ? (
                     <>
                         <li className="current">
-                            <HomeIcon fontSize="small" />
+                            <div className="position-relative"><HomeIcon fontSize="small" /></div>
                             <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>{t('home')}</Link>
                         </li>
                         <li>
-                            <PlaylistAddIcon fontSize="small" />
+                            <div className="position-relative"><PlaylistAddIcon fontSize="small" /></div>
                             <Link to="/dashboard/nueva-operacion" className={isActive('/') ? 'active' : ''}>{t('newOperation')}</Link>
                         </li>
                         <li>
-                            <ChecklistIcon fontSize="small" />
+                            <div className="position-relative"><ChecklistIcon fontSize="small" /></div>
                             <Link to="/dashboard/mis-operaciones" className={isActive('/') ? 'active' : ''}>{t('operations')}</Link>
                         </li>
                     </>
                 ) : role === 'user' ? (
                     <>
                         <li className="current">
-                            <HomeIcon fontSize="small" />
-                            <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>{t('dashboard')}</Link>
+                            <div className="position-relative"><HomeIcon fontSize="small" /></div>
+                            <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>{t('home')}</Link>
                         </li>
                         <li>
-                            <PlaylistAddIcon fontSize="small" />
+                            <div className="position-relative"><PlaylistAddIcon fontSize="small" /></div>
                             <Link to="/dashboard/nueva-operacion" className={isActive('/') ? 'active' : ''}>{t('newOperation')}</Link>
                         </li>
                         <li>
-                            <ChecklistIcon fontSize="small" />
+                            <div className="position-relative"><ChecklistIcon fontSize="small" /></div>
                             <Link to="/dashboard/mis-operaciones" className={isActive('/') ? 'active' : ''}>{t('operations')}</Link>
                         </li>
                     </>
                 ) : (
                     <>
                         <li className="current">
-                            <HomeIcon fontSize="small" />
-                            <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>{t('dashboard')}</Link>
+                            <div className="position-relative"><HomeIcon fontSize="small" /></div>
+                            <Link to="/dashboard" className={isActive('/dashboard') ? 'active' : ''}>{t('home')}</Link>
                         </li>
                         <li>
-                            <PlaylistAddIcon fontSize="small" />
+                            <div className="position-relative"><PlaylistAddIcon fontSize="small" /></div>
                             <Link to="/dashboard/nueva-operacion" className={isActive('/') ? 'active' : ''}>{t('newOperation')}</Link>
                         </li>
                         <li>
-                            <ChecklistIcon fontSize="small" />
+                            <div className="position-relative"><ChecklistIcon fontSize="small" /></div>
                             <Link to="/dashboard/mis-operaciones" className={isActive('/') ? 'active' : ''}>{t('operations')}</Link>
                         </li>
                     </>
@@ -80,20 +80,20 @@ const AsideContent = () => {
                 <ul>
                 {role === 'Operator' ? (
                     <>
-                        <li className="alert">
-                            <Person2Icon fontSize="small" />
+                        <li>
+                            <div className="position-relative alert"><Person2Icon fontSize="small" /></div>
                             <Link to="/dashboard/mi-perfil" className={isActive('/') ? 'active' : ''}>{t('profile')}</Link>
                         </li>
                         <li>
-                            <AccountBalanceIcon fontSize="small" />
+                            <div className="position-relative"><AccountBalanceIcon fontSize="small" /></div>
                             <Link to="/dashboard/mis-bancos" className={isActive('/') ? 'active' : ''}>{t('my_banks_account')}</Link>
                         </li>
                         <li>
-                            <WalletIcon fontSize="small" />
+                            <div className="position-relative"><WalletIcon fontSize="small" /></div>
                             <Link to="/dashboard/mis-wallets" className={isActive('/') ? 'active' : ''}>{t('wallets')}</Link>
                         </li>
                         <li>
-                            <SettingsIcon fontSize="small" />
+                            <div className="position-relative"><SettingsIcon fontSize="small" /></div>
                             <Link to="/dashboard/settings" className={isActive('/') ? 'active' : ''}>{t('settings')}</Link>
                         </li>
                     </>
