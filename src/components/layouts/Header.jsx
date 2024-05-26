@@ -1,7 +1,8 @@
 //import { Link } from 'react-router-dom';
 //import { useTranslation } from 'react-i18next';
 //import LanguageSwitcher from '../LangSwitch';
-//import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { selectAuth } from '../../redux/slices';
 import blankProfile from '../../assets/images/blank-profile.png';
 
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
@@ -11,12 +12,17 @@ const Header = () => {
   //const { t } = useTranslation();
   //const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
+  const authState = useSelector(selectAuth);
+  const { role } = authState;
+
   return (
     <>
       <header className='wrapDashboard_header'>
         <div className="container-fluid">
-          <div className='row justify-content-end'>
-
+          <div className='row justify-content-between align-content-center'>
+            <div className='d-flex align-content-center'>
+              {role}
+            </div>
             <nav className='header_menu--nav'>
               <ul>
                 <li><PeopleAltIcon fontSize="small" /></li>

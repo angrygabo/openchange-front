@@ -26,6 +26,21 @@ const esTranslations = {
 
     //perfil
     infoPerfil: 'Tu nombre de usuario es tu e-mail. Cambiar tu correo electrónico en Detalles del perfil del propietario también cambiará tu nombre de usuario.',
+
+    //Listado operaciones
+    noResults: 'No hay resultados para tu búsqueda',
+    ResetFilter: 'Resetear busqueda',
+    ApplyFilters: 'Buscar',
+    all: 'Todos',
+    pending: 'Pendiente',
+    finished: 'Finalizado',
+    canceled: 'Cancelado',
+    BuscarPorEmail: 'Buscar por email',
+    client: 'Cliente',
+    originAmount: 'Monto origen',
+    destinationAmount: 'Monto destino',
+    operationDate: 'Fecha operación',
+
 };
   
 export default esTranslations;

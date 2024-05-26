@@ -4,7 +4,7 @@ const ptTranslations = {
     password: 'Contrasenha',
     role: 'Rol',
     login: 'Iniciar sessão',
-    languaje: 'Linguagem',
+    languaje: 'Linguagem seleccionado:',
 
     //Navbar
     dashboard: 'Painel',
@@ -25,7 +25,22 @@ const ptTranslations = {
     submit: 'Enviar',
 
     //perfil
-    infoPerfil: 'Tu nombre de usuario es tu e-mail. Cambiar tu correo electrónico en Detalles del perfil del propietario también cambiará tu nombre de usuario.',
+    infoPerfil: 'Seu nome de usuário é seu e-mail. Alterar seu e-mail em Detalhes do perfil do proprietário também alterará seu nome de usuário.',
+
+    //Listado operaciones
+    noResults: 'Não há resultados para a sua pesquisa',
+    ResetFilter: 'Redefinir pesquisa',
+    ApplyFilters: 'Procurar',
+    all: 'Tudo',
+    pending: 'Pendente',
+    finished: 'Concluído',
+    canceled: 'Cancelado',
+    BuscarPorEmail: 'Pesquisar por e-mail',
+    client: 'Cliente',
+    originAmount: 'Quantidade de origem',
+    destinationAmount: 'Valor de destino',
+    operationDate: 'Data da transação',
+
 };
   
 export default ptTranslations;

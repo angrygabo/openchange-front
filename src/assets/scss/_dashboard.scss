@@ -161,12 +161,16 @@
             -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0);
             box-shadow: 0 0px 10px rgba(0, 0, 0, 0);
             border-radius: 10px;
+            button.active {
+                background-color: #625BFF;
+                color: #ffffff;
+            }
             table {
                 td {
                     padding: 5px 0;
                     span {
-                        display: block;
-                        width: 85px;
+                        display: inline-block;
+                        width: 100px;
                         padding: 5px 15px;
                         border-radius: 10px;
                         font-size: .87rem;
@@ -176,7 +180,7 @@
                     &.pending {
                         span {
                             background-color: #FFF2C6;
-                            color: #B84E08;
+                            color: #cbac16;
                         }
                     }
                     &.canceled {

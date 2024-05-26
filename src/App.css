@@ -8165,12 +8165,16 @@ body[data-box-scroll] > [class*=scroll-parent] > [class*=scroll-content] {
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0);
   border-radius: 10px;
 }
+.wrapDashboard_content .bodyContent button.active {
+  background-color: #625BFF;
+  color: #ffffff;
+}
 .wrapDashboard_content .bodyContent table td {
   padding: 5px 0;
 }
 .wrapDashboard_content .bodyContent table td span {
-  display: block;
-  width: 85px;
+  display: inline-block;
+  width: 100px;
   padding: 5px 15px;
   border-radius: 10px;
   font-size: 0.87rem;
@@ -8179,7 +8183,7 @@ body[data-box-scroll] > [class*=scroll-parent] > [class*=scroll-content] {
 }
 .wrapDashboard_content .bodyContent table td.pending span {
   background-color: #FFF2C6;
-  color: #B84E08;
+  color: #cbac16;
 }
 .wrapDashboard_content .bodyContent table td.canceled span {
   background-color: #FEE4E2;
