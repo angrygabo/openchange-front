@@ -31,9 +31,9 @@
     "react-router-dom": "^6.21.3",
     "redux": "^4.2.1"
   },
-  "homepage": "",
+  "homepage": "https://josegabrielm10.sg-host.com/",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "@fullhuman/postcss-purgecss": "^6.0.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",

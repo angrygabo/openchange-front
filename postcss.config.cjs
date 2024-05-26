@@ -1,11 +1,16 @@
+const autoprefixer = require('autoprefixer');
+const purgecss = require('@fullhuman/postcss-purgecss');
+
 module.exports = {
-    plugins: [
-      require('autoprefixer'),
-      // Configuración de PurgeCSS
-      process.env.NODE_ENV === 'production' && require('@fullhuman/postcss-purgecss')({
-        content: ['./src/**/*.html', './src/**/*.js'], // Archivos en los que buscar clases CSS utilizadas
-        defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [] // Extractor de clases CSS
-      })
-    ]
-  }
-  
+  plugins: [
+    autoprefixer,
+    ...(process.env.NODE_ENV === 'production' ? [purgecss({
+      content: [
+        './public/**/*.html',
+        './src/**/*.{js,jsx,ts,tsx}',
+      ],
+      defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
+      safelist: [/^Mui/, /^makeStyles/, /^withStyles/]
+    })] : [])
+  ]
+};
