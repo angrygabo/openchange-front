@@ -40,6 +40,7 @@ const enTranslations = {
     originAmount: 'Origin amount',
     destinationAmount: 'Destination amount',
     operationDate: 'Operation date',
+    searchByEmail: 'Search by email',
 };
   
 export default enTranslations;

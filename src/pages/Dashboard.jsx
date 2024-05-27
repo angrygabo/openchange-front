@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import AuthCheck from '../hooks/AuthCheck';
 import RevealBoxes from '../components/animations/RevealContent';
 
@@ -15,7 +16,9 @@ const Dashboard = () => {
         <div className="row">
           <div className="col bodyContent_left px-4 py-5">
             <div className="col-12 child-col-6 px-2">
-
+              <Link to="/dashboard/mis-operaciones/pending">{t('pending')}</Link>
+              <Link to="/dashboard/mis-operaciones/finished">{t('finished')}</Link>
+              <Link to="/dashboard/mis-operaciones/canceled">{t('canceled')}</Link>
             </div>
           </div>
         </div>

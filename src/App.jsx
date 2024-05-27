@@ -13,7 +13,7 @@ import WrapApp from './components/layouts/wrapApp';
 const HomePage = lazy(()        => import('./pages/Home'));
 const Dashboard = lazy(()       => import('./pages/Dashboard'));
 const NuevaOperacion = lazy(()  => import('./pages/NuevaOperacion'));
-const MisOperaciones = lazy(()  => import('./pages/MisOperaciones'));
+const Operaciones = lazy(()  => import('./pages/operaciones/Operaciones'));
 const MiPerfil = lazy(()        => import('./pages/MiPerfil'));
 const MisBancos = lazy(()       => import('./pages/MisBancos'));
 const MisWallets = lazy(()      => import('./pages/MisWallets'));
@@ -31,7 +31,8 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/dashboard/nueva-operacion" element={<NuevaOperacion />} />
-                <Route path="/dashboard/mis-operaciones" element={<MisOperaciones />} />
+                <Route path="/dashboard/mis-operaciones" element={<Operaciones />} />
+                <Route path="/dashboard/mis-operaciones/:status" element={<Operaciones />} />
                 <Route path="/dashboard/mi-perfil" element={<MiPerfil />} />
                 <Route path="/dashboard/mis-bancos" element={<MisBancos />} />
                 <Route path="/dashboard/mis-wallets" element={<MisWallets />} />

@@ -40,6 +40,7 @@ const esTranslations = {
     originAmount: 'Monto origen',
     destinationAmount: 'Monto destino',
     operationDate: 'Fecha operación',
+    searchByEmail: 'Filtrar por email',
 
 };
   

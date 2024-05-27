@@ -53,6 +53,7 @@ button {
     border-radius: 5px;
     overflow: hidden;
 	padding: 10px 20px;
+    min-width: max-content;
 	cursor: pointer;
     &:hover {
         color: #000000;

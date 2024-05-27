@@ -40,6 +40,7 @@ const ptTranslations = {
     originAmount: 'Quantidade de origem',
     destinationAmount: 'Valor de destino',
     operationDate: 'Data da transação',
+    searchByEmail: 'Filtrar por email',
 
 };
   
