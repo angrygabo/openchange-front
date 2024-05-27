@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setOperations, selectOperations } from '../../redux/slices';
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import AuthCheck from '../../hooks/AuthCheck';
@@ -8,10 +10,11 @@ import TextField from '@mui/material/TextField';
 import TransactionsTable from './components/TransactionsTable';
 
 const MyOperations = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   RevealBoxes();
 
-  const transactions = [
+  const transactionsData  = [
     {
       "id_operacion": 1, "monto_origen": 100,
       "monto_destino": 15000,
@@ -137,17 +140,18 @@ const MyOperations = () => {
   {"id_operacion": 54, "monto_origen": 5400, "monto_destino": 810000, "cliente": "cliente54@email.com", "fecha_operacion": "2024-05-25", "status": "finished"},
 ];
 
-  const { status } = useParams(); 
-
   useEffect(() => {
-    setFilterStatus(status || 'pending');
-  }, [status]);
+    dispatch(setOperations(transactionsData));
+  }, [dispatch]);
+
+  const transactions = useSelector(selectOperations);
+
+  const { status } = useParams();
 
   const [currentPage, setCurrentPage] = useState(1);
   const [transactionsPerPage] = useState(15);
-  const [filterStatus, setFilterStatus] = useState(status);
+  const [filterStatus, setFilterStatus] = useState(status || 'pending');
   const [searchEmail, setSearchEmail] = useState('');
-
 
   const filteredTransactions = transactions.filter(transaction => (
     (!filterStatus || transaction.status === filterStatus) &&
@@ -202,16 +206,14 @@ const MyOperations = () => {
             <TransactionsTable transactions={currentTransactions} t={t}/>
             <hr className="my-4"/>
             <div className="col-12 mx-2">
-            {Array.from({ length: pageCount }, (_, i) => (
-                (pageCount > 1) && (
-                  <button
-                    className={`mr-2 ${currentPage === i + 1 ? 'active' : ''}`}
-                    key={i + 1}
-                    onClick={() => paginate(i + 1)}
-                  >
-                    {i + 1}
-                  </button>
-                )
+              {Array.from({ length: pageCount }, (_, i) => (
+                <button
+                  className={`mr-2 ${currentPage === i + 1 ? 'active' : ''}`}
+                  key={i + 1}
+                  onClick={() => paginate(i + 1)}
+                >
+                  {i + 1}
+                </button>
               ))}
             </div>
           </div>

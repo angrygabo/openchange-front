@@ -37,10 +37,11 @@ const enTranslations = {
     canceled: 'canceled',
     BuscarPorEmail: 'Search by email',
     client: 'Client',
-    originAmount: 'Origin amount',
-    destinationAmount: 'Destination amount',
-    operationDate: 'Operation date',
+    originAmount: 'Origin',
+    destinationAmount: 'Destination',
+    operationDate: 'Date',
     searchByEmail: 'Search by email',
+    transactionDetails: 'Transaction details',
 };
   
 export default enTranslations;

@@ -30,9 +30,16 @@
 
 // table striped
 .table-striped {
+    border-spacing: 0;
+    td {
+        padding: 10px;
+    }
+    th {
+        padding: 10px;
+    }
     tbody {
         tr:nth-of-type(odd) {
-            background-color: rgba(0,0,0,.05);
+            background-color: #f6f6f6;
         }
     }
 }

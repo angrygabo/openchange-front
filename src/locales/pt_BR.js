@@ -37,10 +37,11 @@ const ptTranslations = {
     canceled: 'Cancelado',
     BuscarPorEmail: 'Pesquisar por e-mail',
     client: 'Cliente',
-    originAmount: 'Quantidade de origem',
-    destinationAmount: 'Valor de destino',
-    operationDate: 'Data da transação',
+    originAmount: 'Origem',
+    destinationAmount: 'Destino',
+    operationDate: 'Data',
     searchByEmail: 'Filtrar por email',
+    transactionDetails: 'Detalhe da operação',
 
 };
   
